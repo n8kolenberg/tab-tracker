@@ -9,9 +9,9 @@ app.use(morgan('combined'))
 app.use(bodyParser.json()) // Allow our app to easily parse any JSON that's sent in
 app.use(cors()) // You need this if you want any client to hit your server
 
-app.get('/status', (req, res) => {
+app.post('/register', (req, res) => {
   res.send({
-    message: 'hello world'
+    message: `Hello ${req.body.email}, you have been registered. Have funsies!`
   })
 })
 
